@@ -41,17 +41,21 @@ for file in files:
 print(df)
 
 plt.subplot(121)
-plt.hist(df["size_x"], normed=1, bins= range(0,120,5))
+# plt.hist(df["size_x"], normed=1, bins= range(0,120,5))  # probability
+plt.hist(df["size_x"], bins= range(0,120,5))
 # plt.plot(df["size_x"])
 plt.xlabel('size')
 plt.ylabel('scalar')
+# plt.ylabel('probability')
 plt.title('Length of BoundingBox')
 
 plt.subplot(122)
-plt.hist(df["size_y"], normed=1, bins= range(0,120,5), facecolor='red')
+# plt.hist(df["size_y"], normed=1, bins= range(0,120,5), facecolor='red') # probability
+plt.hist(df["size_y"], bins= range(0,120,5), facecolor='red')
 # plt.plot(df["size_y"])
 plt.xlabel('size')
 plt.ylabel('scalar')
+# plt.ylabel('probability')
 plt.title('Height of BoundingBox')
 
 plt.show()
